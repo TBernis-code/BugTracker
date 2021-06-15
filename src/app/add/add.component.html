@@ -1,1 +1,11 @@
 <p>add works!</p>
+
+<form [formGroup]="bookForm" (ngSubmit)="submitBook()">
+
+    <input type="text" formControlName="title">
+
+    <textarea formControlName="description"></textarea>
+
+    <button type="submit">SUBMIT</button>
+
+</form>
