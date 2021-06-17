@@ -1,11 +1,10 @@
-<p>add works!</p>
+<form [formGroup]="addBugForm" (ngSubmit)="submitBug()">
 
-<form [formGroup]="bookForm" (ngSubmit)="submitBook()">
+    <label for="title">Titre: </label>
+    <input id="title" type="text" formControlName="titre du bug" formControlName="title">
+    <label for="description">Description: </label>
+    <input id="description" type="text" formControlName="description du bug" formControlName="description">
 
-    <input type="text" formControlName="title">
-
-    <textarea formControlName="description"></textarea>
-
-    <button type="submit">SUBMIT</button>
+    <button type="submit">Créer</button>
 
 </form>
