@@ -23,8 +23,7 @@
       <span>BugTracker</span>
     </mat-toolbar>
 
-    <app-formtest (newBugEvent)="addBug($event)"></app-formtest>
-    <app-bug [bug]="bugs"></app-bug>
+  <router-outlet></router-outlet>
 
   </mat-sidenav-content>
 </mat-sidenav-container>
