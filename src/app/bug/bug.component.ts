@@ -2,21 +2,18 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/cor
 import { Bug } from '../@shared/models/bug';
 
 
+
 @Component({
   selector: 'app-bug',
   templateUrl: './bug.component.html',
   styleUrls: ['./bug.component.scss']
 })
-export class BugComponent implements OnChanges {
+export class BugComponent {
 
-  @Input() bug ;
+  @Input() bug;
+
+  displayedColumns: string[] = ['title', 'description', 'status'];
 
   constructor() { }
-
-  ngOnChanges(changes: SimpleChanges) {
-    // changes.prop contains the old and the new value...
-    console.log('ok');
-    console.log(changes.prop);
-  }
 
 }
