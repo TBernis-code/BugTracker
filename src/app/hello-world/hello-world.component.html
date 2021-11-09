@@ -1,0 +1,11 @@
+<p>Page de test</p>
+<div class="container">
+    <app-carousel [slides]="this.bugService.slides" [currentSlide]="currentSlide"></app-carousel>
+    <!-- controls -->
+    <button class="control prev" (click)="onPreviousClick()">
+        <span class="arrow left"></span>
+    </button>
+    <button class="control next" (click)="onNextClick()">
+        <span class="arrow right"></span>
+    </button>
+</div>

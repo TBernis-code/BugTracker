@@ -1,26 +1,45 @@
-<p> Liste des Bugs: </p>
 
-<mat-selection-list #bugs>
-    <mat-list-option *ngFor="let bugs of bug">
-        Titre : {{bugs.title}} -- Description : {{bugs.description}} -- Status : {{bugs.status}}
+<p> Liste des Bugs: </p>
+<!---
+<mat-selection-list>
+    <mat-list-option *ngFor="let bug of bugs">
+        Titre : {{bug.title}} -- Description : {{bug.description}} -- Status : {{bug.status}} 
     </mat-list-option>
 </mat-selection-list>
+-->
+
+<mat-grid-list cols="3" rowHeight="650px">
+    <mat-grid-tile *ngFor="let bug of bugs">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>{{bug.title}}</mat-card-title>
+                <mat-card-subtitle>{{bug.status}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+                <p>
+                    {{bug.description}}
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="primary" (click)="sendId(bug._id)" routerLink="/modif">Modifier</button>
+                <button mat-raised-button color="warn" (click)="deleteBug(bug._id)">Supprimer</button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
 
 
-<table mat-table [dataSource]="bug" class="mat-elevation-z8">
+<!---
+<table mat-table [dataSource]="bugs" class="mat-elevation-z8">
 
-    <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
 
-    
-
-    <!-- Title Column -->
     <ng-container matColumnDef="title">
         <th mat-header-cell *matHeaderCellDef> Titre </th>
         <td mat-cell *matCellDef="let element"> {{element.title}} </td>
     </ng-container>
 
-    <!-- Description Column -->
     <ng-container matColumnDef="description">
         <th mat-header-cell *matHeaderCellDef> Description </th>
         <td mat-cell *matCellDef="let element"> {{element.description}} </td>
@@ -28,12 +47,15 @@
 
     <ng-container matColumnDef="status">
         <th mat-header-cell *matHeaderCellDef> Status </th>
-        <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.status}} 
+            <button mat-raised-button color="primary">Modifier</button>
+            <button mat-raised-button color="warn" (click)="deleteBug(element._id)">Supprimer</button>
+        </td>
     </ng-container>
 
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-
+-->
 <!--{{bug | json}}-->

@@ -1,5 +1,5 @@
 export interface Bug {
-    _id: string;
+    _id: number;
     title: string;
     description: string;
     status: BugStatus;

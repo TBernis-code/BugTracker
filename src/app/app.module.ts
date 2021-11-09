@@ -23,6 +23,14 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
+import { BugService } from './@shared/models/services/bug.service';
+import { HttpClientModule } from '@angular/common/http';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { HelloWorldComponent } from './hello-world/hello-world.component';
+import { CarouselComponent } from './carousel/carousel.component';
+import { BoutonComponent } from './bouton/bouton.component';
+import { PageTestComponent } from './page-test/page-test.component';
 
 
 @NgModule({
@@ -33,7 +41,11 @@ import {MatTableModule} from '@angular/material/table';
     ProfileEditorComponent,
     BugComponent,
     NavBarComponent,
-    FormtestComponent
+    FormtestComponent,
+    HelloWorldComponent,
+    CarouselComponent,
+    BoutonComponent,
+    PageTestComponent
   ],
   imports: [
     BrowserModule,
@@ -52,8 +64,11 @@ import {MatTableModule} from '@angular/material/table';
     MatRadioModule,
     MatCardModule,
     MatTableModule,
+    HttpClientModule,
+    MatSnackBarModule,
+    MatGridListModule,
   ],
-  providers: [],
+  providers: [BugService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

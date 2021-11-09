@@ -1,0 +1,18 @@
+
+
+/* style the arrows */
+.arrow {
+    display: block;
+    border-left: 0.1em solid black;
+    border-bottom: 0.1em solid black;
+    width: 0.5em;
+    height: 0.5em;
+
+    &.left {
+        transform: rotate(45deg);
+    }
+
+    &.right {
+        transform: rotate(225deg);
+    }
+}

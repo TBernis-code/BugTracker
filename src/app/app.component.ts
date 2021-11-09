@@ -12,7 +12,7 @@ export class AppComponent {
 
   title = 'BugTracker';
 
-  addBug(newBug: Partial<Bug>) {
+  addBug(newBug: Bug) {
     this.bugs.push(newBug as Bug);
     console.log('ok');
     console.log(this.bugs);
